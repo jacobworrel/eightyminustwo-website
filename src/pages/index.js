@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Link from 'gatsby-link';
+
 import styles from './index.module.css';
 
 import Cover from './../components/Cover/Cover';
