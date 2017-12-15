@@ -1,7 +1,6 @@
 .container {
   background-color: black;
   height: 100px;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
