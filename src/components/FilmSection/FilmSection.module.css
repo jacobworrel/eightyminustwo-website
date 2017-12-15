@@ -48,6 +48,10 @@
   display: none;
 }
 
+.column {
+  cursor: pointer;  
+}
+
 .column:hover .overlay {
   display: block;
 }
@@ -64,4 +68,12 @@
 
 .credit, .name {
   margin: 0;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 2em 3em 0 0;
+  cursor: pointer;
 }

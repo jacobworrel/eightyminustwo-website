@@ -39,7 +39,7 @@ const Cover = () => (
     <ShowcaseReel />
     <ChevronDown
       className={styles.chevronDown}
-      color="black"
+      color="white"
       size={75}
       onClick={() =>
         scroller.scrollTo('filmSection', {

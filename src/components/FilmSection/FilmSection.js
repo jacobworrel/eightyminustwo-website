@@ -16,7 +16,8 @@ ReactModal.defaultStyles = {
   ...ReactModal.defaultStyles,
   overlay: {
     ...ReactModal.defaultStyles.overlay,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)'
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    zIndex: 2
   },
   content: {
     ...ReactModal.defaultStyles.content,
@@ -118,9 +119,7 @@ class FilmSection extends React.Component {
   }
 
   handleOpenModal(vimeoLink) {
-    if (vimeoLink) {
-      this.setState({ showModal: true, selectedVideo: vimeoLink });
-    }
+    this.setState({ showModal: true, selectedVideo: vimeoLink });
   }
 
   handleCloseModal() {
@@ -147,16 +146,24 @@ class FilmSection extends React.Component {
         <main id="films" className={styles.container}>
           {films}
           <ReactModal isOpen={this.state.showModal}>
-            <iframe
-              src={this.state.selectedVideo}
-              width="640"
-              height="360"
-              frameBorder="0"
-              webkitallowfullscreen="true"
-              mozAllowfullscreen="true"
-              allowFullScreen="true"
+            {this.state.selectedVideo ? (
+              <iframe
+                src={this.state.selectedVideo}
+                width="640"
+                height="360"
+                frameBorder="0"
+                webkitallowfullscreen="true"
+                mozAllowfullscreen="true"
+                allowFullScreen="true"
+              />
+            ) : (
+              <p>Coming soon.</p>
+            )}
+            <X
+              size={50}
+              className={styles.close}
+              onClick={this.handleCloseModal}
             />
-            <X onClick={this.handleCloseModal} />
           </ReactModal>
         </main>
       </Element>
