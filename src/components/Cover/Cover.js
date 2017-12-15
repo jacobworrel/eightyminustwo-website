@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import feather from '../../utils/feather';
-import styles from './cover.module.css';
+import { ChevronDown } from 'react-feather';
+import { scroller } from 'react-scroll';
 
+import styles from './cover.module.css';
 import poster from './assets/Cloud_Surf.jpg';
 import mp4 from './assets/Cloud_Surf.mp4';
 import webm from './assets/Cloud_Surf.webm';
@@ -18,12 +19,12 @@ const ShowcaseReel = () => (
   <div className={styles.wrapper}>
     <div className={styles.featured}>
       <video
+        poster={poster}
+        className={styles.video}
         playsInline
         autoPlay
         muted
         loop
-        poster={poster}
-        className={styles.video}
       >
         <source src={webm} type="video/webm" />
         <source src={mp4} type="video/mp4" />
@@ -32,17 +33,22 @@ const ShowcaseReel = () => (
   </div>
 );
 
-const ChevronDown = () => (
-  <a href="#films" className={styles.chevronDown}>
-    {feather({ name: 'chevron-down', width: 75, height: 75 })}
-  </a>
-);
-
 const Cover = () => (
   <div>
     <Logo />
     <ShowcaseReel />
-    <ChevronDown />
+    <ChevronDown
+      className={styles.chevronDown}
+      color="black"
+      size={75}
+      onClick={() =>
+        scroller.scrollTo('filmSection', {
+          duration: 1500,
+          delay: 100,
+          smooth: true
+        })
+      }
+    />
   </div>
 );
 

@@ -1,0 +1,41 @@
+.container {
+  background-color: black;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact {
+  margin-left: 50px;
+  font-size: 0.8em;
+  color: white;
+  flex: 1;
+}
+
+.contact:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.socialContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.iconContainer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+.chevronUp {
+  cursor: pointer;
+}
+
+.icon {
+  padding: 5px;
+}
